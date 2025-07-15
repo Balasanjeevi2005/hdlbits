@@ -1,11 +1,12 @@
-module top_module (
+module top_module(
     input a,
     input b,
     input c,
     input d,
-    output out_sop,
-    output out_pos
-); 
-    assign out_sop=(c&d)|(~a & ~b & c),
-        out_pos=(c)&(~b | d)&(~a | b);
+    output out  ); 
+   assign out =(a^b)?(c ~^ d):(c^d);
 endmodule
+// (or-better)
+//     assign out =a^b^c^d;
+
+

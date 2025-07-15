@@ -1,5 +1,11 @@
 module top_module (
-    input [4:1] x, 
-    output f );
-    assign f=(~x[1] & x[3])|(x[1] & x[2] & ~x[3]);
+    input a,
+    input b,
+    input c,
+    input d,
+    output out_sop,
+    output out_pos
+); 
+    assign out_sop=(c&d)|(~a & ~b & c),
+        out_pos=(c)&(~b | d)&(~a | b);
 endmodule

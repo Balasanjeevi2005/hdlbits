@@ -4,7 +4,5 @@ module top_module(
     input c,
     input d,
     output out  ); 
-   assign out =(a^b)?(c ~^ d):(c^d);
+    assign out=(c&a)|(c & ~a & ~b)|(~d & a);
 endmodule
-// (or-better)
-//     assign out =a^b^c^d;

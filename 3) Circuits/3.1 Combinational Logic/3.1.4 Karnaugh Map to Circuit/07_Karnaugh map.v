@@ -1,7 +1,6 @@
 module top_module (
-    input clk,    // Clocks are used in sequential circuits
-    input d,
-    output reg q );//
-    always@(posedge clk)
-        q<=d;
+    input [4:1] x,
+    output f
+); 
+    assign f=(x[3] & ~x[1])|(~x[4] & ~x[2])|(x[3] & x[4] & x[2]);
 endmodule
